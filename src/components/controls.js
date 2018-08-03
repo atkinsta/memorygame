@@ -5,7 +5,7 @@ class Controls extends Component {
         return (
             <div className="controls">
                 <button onClick={this.props.resetState}>Reset</button>
-                <button onClick={this.addScore}>OnScore</button>
+                <button onClick={this.props.seenEmAll}>Seen Em All!</button>
                 <h3>Current Score: {this.props.score} | High Score: {this.props.highScore}</h3>
             </div>
         )

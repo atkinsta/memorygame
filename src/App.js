@@ -17,7 +17,7 @@ class App extends Component {
 
   handleCardClick = (card) => {
     if (this.state.alreadyGuessed.includes(card)) {
-      this.resetState();
+      return this.resetState();
     }
     else {
       var newScore = this.state.score + 1;
@@ -43,11 +43,15 @@ class App extends Component {
   resetState = () => {
     this.setState({
       score: 0,
-      highScore: 0,
+      highScore: this.state.highScore,
       currentlyDisplayed: ["AC", "KH", "4C", "5S", "6H", "7D"],
       alreadyGuessed: [],
       cardList: this.freshCardList()
     });
+  }
+
+  seenEmAll = () => {
+    //wip function
   }
 
   render() {
@@ -55,7 +59,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Jumbotron />
-          <Controls score={this.state.score} highScore={this.state.highScore} resetState={this.resetState}/>
+          <Controls score={this.state.score} highScore={this.state.highScore} resetState={this.resetState} seenEmAll={this.seenEmAll}/>
           <CardHolder
             handleCardClick={this.handleCardClick.bind(this)}
             currentlyDisplayed={this.state.currentlyDisplayed}
