@@ -21,7 +21,7 @@ class Card extends Component {
     render() {
         return(
             <div style={style.container} className="col-md-2 card col-sm-6" onClick={() => this.handleCardClick(this.value)}>
-                <img style={style.images} src={`../images/${this.value}.png`} alt={this.value} />
+                <img style={style.images} src={`./images/${this.value}.png`} alt={this.value} />
             </div>
         ) 
     }
