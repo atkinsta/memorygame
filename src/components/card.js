@@ -19,17 +19,11 @@ class Card extends Component {
         super(props);
         this.value = props.value;
         this.handleCardClick = props.handleCardClick
-        this.updateState = props.updateState
     }
-
-    cardOnClick = (card) => {
-        this.handleCardClick(card);
-        this.updateState(card);
-    } 
 
     render() {
         return(
-            <div around="m" style={style.container} className="card" onClick={() => this.cardOnClick(this.value)}>
+            <div around="m" style={style.container} className="card" onClick={() => this.handleCardClick(this.value)}>
                 <img style={style.images} src={`../images/${this.value}.png`} alt={this.value} />
             </div>
         ) 

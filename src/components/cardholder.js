@@ -5,27 +5,14 @@ class CardHolder extends Component {
     constructor(props) {
         super(props)
         this.handleCardClick = props.handleCardClick
-    }
-
-    state = {
-        currentlyDisplayed: {},
-        newCards: ["AC", "KH", "4C", "5S", "6H", "7D"],
-        alreadyGuessed: []
-    }
-
-    updateState = (card) => {
-        this.setState({
-            newCards: ["AS", "4H", "9S", "6C", "7C"],
-            alreadyGuessed: [card]
-        });
+        this.updateState = props.updateState
     }
 
     render() {
         return(
             <div className="CardHolder">
-                {this.state.newCards.map(card => <Card
+                {this.props.currentlyDisplayed.map(card => <Card
                     handleCardClick={this.handleCardClick.bind(this)}
-                    updateState={this.updateState.bind(this)}
                     key={card}
                     value={card.toString()}
                 />)}
