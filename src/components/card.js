@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 
 const style = {
-    contianer: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "space-between"
-
+    container: {
+        margin: "auto"
     },
     images: {
-        width: 100,
-        display: "inline-block",
-        float: "left"
+        width: 150,
+        display: "flex",
+        justifyContent: "space-evenly"
     }
 }
 
@@ -23,7 +20,7 @@ class Card extends Component {
 
     render() {
         return(
-            <div around="m" style={style.container} className="card" onClick={() => this.handleCardClick(this.value)}>
+            <div style={style.container} className="col-md-2 card col-sm-6" onClick={() => this.handleCardClick(this.value)}>
                 <img style={style.images} src={`../images/${this.value}.png`} alt={this.value} />
             </div>
         ) 
